@@ -1,0 +1,4 @@
+
+source ~/.todo_completion
+alias todotxt='~/.todotxt_cli/todo.sh -d ~/.todotxt_cli/todo.cfg'
+alias gitcustom='git --git-dir=.gitcustom'
