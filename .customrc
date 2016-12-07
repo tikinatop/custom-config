@@ -1,4 +1,15 @@
 
-source ~/.todo_completion
-alias todotxt='~/.todotxt_cli/todo.sh -d ~/.todotxt_cli/todo.cfg'
+#source ~/.todo_completion
+#TODOTXT
+export TODOTXT_DIR=$HOME/.todotxt_cli
+export TODOTXT_DEFAULT_ACTION=ls
+alias todotxt="$TODOTXT_DIR/todo.sh -d $TODOTXT_DIR/todo.cfg"
+#complete -F _todo todotxt
+_todoElsewhere()
+{
+    local _todo_sh="$TODOTXT_DIR/todo.sh -d $TODOTXT_DIR/todo.cfg"
+    _todo "$@"
+}
+complete -F _todoElsewhere todotxt
+#CUSTOM GIT DEPO
 alias gitcustom='git --git-dir=.gitcustom'
