@@ -3,13 +3,16 @@
 #TODOTXT
 export TODOTXT_DIR=$HOME/.todotxt_cli
 export TODOTXT_DEFAULT_ACTION=ls
-alias todotxt="$TODOTXT_DIR/todo.sh -d $TODOTXT_DIR/todo.cfg"
+alias t="$TODOTXT_DIR/todo.sh -d $TODOTXT_DIR/todo.cfg"
 #complete -F _todo todotxt
 _todoElsewhere()
 {
     local _todo_sh="$TODOTXT_DIR/todo.sh -d $TODOTXT_DIR/todo.cfg"
     _todo "$@"
 }
-complete -F _todoElsewhere todotxt
+complete -F _todoElsewhere t
 #CUSTOM GIT DEPO
 alias gitcustom='git --git-dir=.gitcustom'
+
+alias tpush='git -C "$HOME/.todotxt_cli" add -A; git -C "$HOME/.todotxt_cli" commit --amend --no-edit; git -C "$HOME/.todotxt_cli" push -f origin master'
+alias tpull='git -C "$HOME/.todotxt_cli" pull'
