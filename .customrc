@@ -1,4 +1,4 @@
-
+export PATH=$PATH:$HOME/.bin
 #source ~/.todo_completion
 #TODOTXT
 export TODOTXT_DIR=$HOME/.todotxt_cli
@@ -14,5 +14,5 @@ complete -F _todoElsewhere t
 #CUSTOM GIT DEPO
 alias gitcustom='git --git-dir=.gitcustom'
 
-alias tpush='git -C "$HOME/.todotxt_cli" add -A; git -C "$HOME/.todotxt_cli" commit --amend --no-edit; git -C "$HOME/.todotxt_cli" push -f origin master'
+alias tpush='git -C "$HOME/.todotxt_cli" add -u; git -C "$HOME/.todotxt_cli" commit --amend --no-edit; git -C "$HOME/.todotxt_cli" push -f origin master'
 alias tpull='git -C "$HOME/.todotxt_cli" pull'
